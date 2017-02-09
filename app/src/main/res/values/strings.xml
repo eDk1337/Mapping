@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">Mapping</string>
+    <string name="choosemap">Mapping</string>
+    <string name="regularview">Regular View</string>
+    <string name="cyclemapview">Cycle View</string>
 </resources>
