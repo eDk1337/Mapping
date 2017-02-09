@@ -2,4 +2,6 @@
     <string name="choosemap">Mapping</string>
     <string name="regularview">Regular View</string>
     <string name="cyclemapview">Cycle View</string>
+    <string name="setLocationMap">Set Location</string>
+
 </resources>

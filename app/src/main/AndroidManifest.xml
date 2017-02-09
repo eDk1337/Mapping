@@ -28,6 +28,8 @@
 
         <activity android:name=".MapChooseActivity" android:label="@string/choosemap">
         </activity>
+        <activity android:name=".SetLocation" android:label="@string/choosemap">
+        </activity>
     </application>
 
 </manifest>
