@@ -38,6 +38,7 @@ public class HelloMap extends Activity
     {
         MenuInflater inflater=getMenuInflater();
         inflater.inflate(R.menu.menu_hello_map, menu);
+        inflater.inflate(R.menu.menu_location_set, menu);
         return true;
     }
 
@@ -49,6 +50,11 @@ public class HelloMap extends Activity
             // react to the menu item being selected...
             Intent intent = new Intent(this,MapChooseActivity.class);
             startActivityForResult(intent,0);
+            return true;
+        }
+        if(item.getItemId() == R.id.setLocationMap) {
+            Intent intent = new Intent(this,SetLocation.class);
+            startActivityForResult(intent, 1);
             return true;
         }
         return false;
@@ -74,6 +80,18 @@ public class HelloMap extends Activity
                 }
             }
         }
+
+        if(requestCode==1) {
+            if(resultCode==RESULT_OK)
+            {
+
+                Bundle extras=intent.getExtras();
+                Integer lat = extras.getInt("com.example.lat");
+                Integer lon = extras.getInt("com.example.lon");
+                mv.getController().setCenter(new GeoPoint(lat,lon));
+            }
+        }
+
     }
 
 }
