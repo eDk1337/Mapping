@@ -23,14 +23,14 @@ public class SetLocation extends Activity implements View.OnClickListener {
 public void onClick(View v)
 {
     EditText latitude = (EditText)findViewById(R.id.latitudeBox);
-    int lat = Integer.parseInt(latitude.getText().toString());
+    double lat = Double.parseDouble(latitude.getText().toString());
     EditText longitude = (EditText)findViewById(R.id.longitudeBox);
-    int lon = Integer.parseInt(longitude.getText().toString());
+    double lon = Double.parseDouble(longitude.getText().toString());
 
     Intent intent = new Intent();
     Bundle bundle=new Bundle();
-    bundle.putInt("com.example.lat", lat);
-    bundle.putInt("com.example.lon", lon);
+    bundle.putDouble("com.example.lat", lat);
+    bundle.putDouble("com.example.lon", lon);
     intent.putExtras(bundle);
     setResult(RESULT_OK,intent);
     finish();

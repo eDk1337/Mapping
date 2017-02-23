@@ -86,8 +86,8 @@ public class HelloMap extends Activity
             {
 
                 Bundle extras=intent.getExtras();
-                Integer lat = extras.getInt("com.example.lat");
-                Integer lon = extras.getInt("com.example.lon");
+                Double lat = extras.getDouble("com.example.lat");
+                Double lon = extras.getDouble("com.example.lon");
                 mv.getController().setCenter(new GeoPoint(lat,lon));
             }
         }
