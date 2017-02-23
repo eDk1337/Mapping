@@ -45,6 +45,8 @@ public class HelloMap extends Activity
 
     public boolean onOptionsItemSelected(MenuItem item)
     {
+
+
         if(item.getItemId() == R.id.choosemap)
         {
             // react to the menu item being selected...
@@ -52,11 +54,20 @@ public class HelloMap extends Activity
             startActivityForResult(intent,0);
             return true;
         }
-        if(item.getItemId() == R.id.setLocationMap) {
-            Intent intent = new Intent(this,SetLocation.class);
+
+        if(item.getItemId() == R.id.exampleList) {
+            Intent intent = new Intent(this, ExampleListActivity.class);
             startActivityForResult(intent, 1);
             return true;
         }
+
+        if(item.getItemId() == R.id.setLocationMap) {
+            Intent intent = new Intent(this,SetLocation.class);
+            startActivityForResult(intent, 2);
+            return true;
+        }
+
+
         return false;
     }
 

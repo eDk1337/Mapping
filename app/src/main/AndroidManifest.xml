@@ -30,6 +30,7 @@
         </activity>
         <activity android:name=".SetLocation" android:label="@string/setLocationMap">
         </activity>
+        <activity android:name=".ExampleListActivity" android:label="Choose Map Style(List)"></activity>
     </application>
 
 </manifest>
