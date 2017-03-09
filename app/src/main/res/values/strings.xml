@@ -3,5 +3,6 @@
     <string name="regularview">Regular View</string>
     <string name="cyclemapview">Cycle View</string>
     <string name="setLocationMap">Set Location</string>
+    <string name="preferences">Preferences</string>
 
 </resources>

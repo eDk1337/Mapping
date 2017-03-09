@@ -1,6 +1,7 @@
 package com.example.a2ramae45.mapping;
 
         import android.app.Activity;
+        import android.content.SharedPreferences;
         import android.os.Bundle;
         import android.preference.PreferenceManager;
         import org.osmdroid.views.MapView;
@@ -39,6 +40,7 @@ public class HelloMap extends Activity
         MenuInflater inflater=getMenuInflater();
         inflater.inflate(R.menu.menu_hello_map, menu);
         inflater.inflate(R.menu.menu_location_set, menu);
+        inflater.inflate(R.menu.preferences, menu);
         return true;
     }
 
@@ -55,14 +57,15 @@ public class HelloMap extends Activity
             return true;
         }
 
-        if(item.getItemId() == R.id.exampleList) {
-            Intent intent = new Intent(this, ExampleListActivity.class);
+
+        if(item.getItemId() == R.id.setLocationMap) {
+            Intent intent = new Intent(this,SetLocation.class);
             startActivityForResult(intent, 1);
             return true;
         }
 
-        if(item.getItemId() == R.id.setLocationMap) {
-            Intent intent = new Intent(this,SetLocation.class);
+        if(item.getItemId() == R.id.preferences) {
+            Intent intent = new Intent(this,MyPrefActivity.class);
             startActivityForResult(intent, 2);
             return true;
         }
@@ -104,5 +107,17 @@ public class HelloMap extends Activity
         }
 
     }
+
+    public void onStart() {
+        super.onStart();
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        double lat = Double.parseDouble ( prefs.getString("lat", "50.9"));
+        double lon = Double.parseDouble ( prefs.getString("lon", "-1.4"));
+        mv.getController().setCenter(new GeoPoint(lat,lon));
+
+
+    }
+
+
 
 }
